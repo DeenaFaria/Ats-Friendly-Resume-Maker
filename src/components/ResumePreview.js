@@ -8,7 +8,8 @@ const ResumePreview = ({
   skills, 
   languages, 
   certifications, 
-  projects
+  projects,
+  links
 }) => {
   return (
     <div>
@@ -67,6 +68,12 @@ const ResumePreview = ({
           <h3>{cert.title}</h3>
           <p>{cert.issuer}</p>
           <p>{cert.date}</p>
+          {cert.link && (
+           <p>
+              Link: <a href={cert.link} target="_blank" rel="noopener noreferrer">{cert.link}</a>
+           </p>
+           )}
+
         </div>
       ))}
 
@@ -78,6 +85,18 @@ const ResumePreview = ({
           <p>{proj.link}</p>
         </div>
       ))}
+
+<div>
+        <h3>Portfolio Links</h3>
+        {links.map((l, index) => (
+          <p key={index}>
+            {l.type}:{" "}
+            <a href={l.link} target="_blank" rel="noopener noreferrer">
+              {l.link}
+            </a>
+          </p>
+        ))}
+      </div>
 
     </div>
   );

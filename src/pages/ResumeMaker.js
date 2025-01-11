@@ -52,6 +52,7 @@ const ResumeMaker = () => {
         <LanguagesForm onUpdate={setLanguages} />
         <CertificationsForm onUpdate={setCertifications} />
         <ProjectsForm onUpdate={setProjects} />
+        <PortfolioLinksForm onUpdate={setLinks} links={links} />
        
       </div>
 
@@ -66,6 +67,7 @@ const ResumeMaker = () => {
           languages={languages}
           certifications={certifications}
           projects={projects}
+          links={links}
         />
       </div>
 
